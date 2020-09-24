@@ -22,12 +22,12 @@ def hotel(request):
     hotel_obj = Categories.objects.get(pk=1)
     video_obj = Videos.objects.filter(pacticipate_category=hotel_obj).values()
     
-    print(video_obj[5]['thumb_path'])
+    # print(video_obj[1]['thumb_path'])
 
     context = {}
 
     for i in range(1, 8):
-        context[f'{i}_video_path'] = video_obj[i-1]['video_path'] + '.mp4'
+        # context[f'{i}_video_path'] = video_obj[i-1]['video_path'] + '.mp4'
         context[f'{i}_thumb_path'] = video_obj[i-1]['thumb_path'] + '.jpg'
         context[f'{i}_video_name'] = video_obj[i-1]['video_name']
         context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
@@ -56,8 +56,22 @@ def video(request):
     return render(request, 'video.html', context)
 
 def tour(request):
-    context = {'a':1}
-    return render(request, 'tour.html', context)
+    # tour에 해당하는 객체만 가져온다
+    tour_obj = Categories.objects.get(pk=2)
+    video_obj = Videos.objects.filter(pacticipate_category=tour_obj).values()
+    
+    # print(video_obj[1]['thumb_path'])
+
+    context = {}
+
+    for i in range(1, 8):
+        context[f'{i}_video_path'] = video_obj[i-1]['video_path'] + '.mp4'
+        context[f'{i}_thumb_path'] = video_obj[i-1]['thumb_path'] + '.jpg'
+        context[f'{i}_video_name'] = video_obj[i-1]['video_name']
+        context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
+
+    
+    return render(request, 'hotel.html', context)
 
 def mypage(request):
     context = {'a':1}
