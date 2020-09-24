@@ -12,22 +12,44 @@
 
 <style>
     .passport{
-        position: absolute;
+        /* position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 800px;
+        transform: translate(-50%, -50%); */
+        position: relative;
+        margin-top: 10px;
+        width: 500px;
         z-index: 500;
     }
     .stamp{
         position: absolute;
         top: 50%;
+        left: 10%;
+        transform: translate(-50%, -50%);
+        width: 250px;
+        z-index: 600;
+        animation-duration: 2s;
+    }
+    .welcome-popup {
+        position: absolute;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 450px;
+        background-color: rgb(199, 199, 199);
         z-index: 600;
-        animation: bounce;
-        animation-duration: 2s;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .welcome-popup p {
+        display: none;
+        color: rgb(43, 43, 43);
+        text-shadow: 2px 2px 2px white;
+        /* z-index: 600; */
+        font-size: 26px;
+        font-weight: 600;
+        line-height: 10px;
+        font-family: 'NanumSquare', sans-serif;
     }
     
 </style>
@@ -37,16 +59,26 @@
         {% if user.is_authenticated %}
             <script>
                 $( document ).ready( function() {
+                    $( '.stamp' ).animate({left: '50%'});
                     setTimeout(function() {
-                        $( 'img' ).remove( '.passport' )
                         $( 'img' ).remove( '.stamp' )
+                        $( 'img' ).remove( '.passport' )
+                        $( 'p' ).css('display', 'block');
                     }, 3000);
-                    
+                    setTimeout(function() {
+                        $( 'div' ).remove( '.welcome-popup' )
+                    }, 5000);
                 } );
             </script>
 
-            <img class="passport" src="{%static 'passport.png'%}" ondragstart="return false"></img>
-            <img class="stamp" src="{%static 'stamp.png'%}" ondragstart="return false"></img>
+            <div class='welcome-popup'>
+                <img class="passport" src="{%static 'passport.png'%}" ondragstart="return false"></img>
+                <img class="stamp" src="{%static 'stamp.png'%}" ondragstart="return false" stylesheet="display:none"></img>
+                
+                <p>PPICKUS에 오신 것을 환영합니다~ </p>
+                <p>도장도 받았으니 여행을 시작해 보세요 !</p>
+            </div>
+
         {% else %}
         {% endif %}
         <!--헤더 120px-->
@@ -54,9 +86,6 @@
 
             <div class="login_text">
                 {% if user.is_authenticated %}
-                    <script>
-                        alert('sucess!');
-                    </script>
                     <a class="login_a" href="{%url 'logout'%}">로그아웃</a>
                     
                 {% else %}
