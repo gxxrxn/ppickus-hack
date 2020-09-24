@@ -3,6 +3,7 @@ from .models import Users
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
+from .models import Users, Categories, Videos
 
 # Create your views here.
 ERROR_MSG = {
@@ -17,7 +18,21 @@ def index(request):
     return render(request, 'index.html', context)
 
 def hotel(request):
-    context = {'a':1}
+    # hotel에 해당하는 객체만 가져온다
+    hotel_obj = Categories.objects.get(pk=1)
+    video_obj = Videos.objects.filter(pacticipate_category=hotel_obj).values()
+    
+    print(video_obj[5]['thumb_path'])
+
+    context = {}
+
+    for i in range(1, 8):
+        context[f'{i}_video_path'] = video_obj[i-1]['video_path'] + '.mp4'
+        context[f'{i}_thumb_path'] = video_obj[i-1]['thumb_path'] + '.jpg'
+        context[f'{i}_video_name'] = video_obj[i-1]['video_name']
+        context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
+
+    
     return render(request, 'hotel.html', context)
 
 def vr(request):
