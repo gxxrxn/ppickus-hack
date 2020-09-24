@@ -1,0 +1,141 @@
+@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+    background-color:  rgb(133, 133, 133)
+}
+
+.register_form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    background-color: white;
+    box-shadow: 0px 0px  15px 2px gray;
+}
+.register_logo {
+    padding: 45px 0 30px 0;
+    margin: 0;
+    height: 30px;
+    text-align: center;
+    color:rgb(78, 78, 78);
+    font-family: 'NanumSquare', sans-serif;
+    font-weight: 800;
+    font-size: 30px; 
+}
+
+/* 로그인 비밀번호 */
+.register-check1{
+    width: 100%;
+    height: 260px;
+}
+form {
+    background-color:white;
+    margin: 0 auto;
+    padding: 30px 45px;
+    height: 260px;
+}
+.name_box {
+    width: 73%;
+    height: 35px;
+    margin: 0 0 15px 70px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    transition: all 0.5s
+}
+.id_box {
+    width: 73%;
+    height: 35px;
+    margin: 0 0 15px 55px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    transition: all 0.5s
+}
+.password_box {
+    width: 73%;
+    height: 35px;
+    margin: 0 0 15px 45px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    transition: all 0.5s
+}
+.password_check_box {
+    width: 73%;
+    height: 35px;
+    margin: 0 0 15px 15px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    transition: all 0.5s
+}
+.email_box {
+    width: 73%;
+    height: 35px;
+    margin: 0 0 15px 57px;
+    padding: 10px;
+    font-size: 13px;
+    box-sizing: border-box;
+    outline: 0;
+    border: none;
+    border-bottom: 1px solid #4d4d4d;
+    transition: all 0.5s
+}
+
+.register-check1 input:focus{
+    border: none;
+    border-bottom: 1px solid  rgb(211, 92, 92);
+    height: 34px;
+}
+
+/* 로그인 박스 */
+.register-button{
+    margin: 10px auto;
+    width: 100%;
+    height: 40px;
+    background-color:#4d4d4d;
+    outline: 0;
+    color: white;
+    border: 0;
+    font-size: 13px;
+    transition: all 0.1s;
+}
+.register-button:hover{
+    background-color: #ccc;
+    color: black; 
+    cursor: pointer;
+}
+
+.massage {
+    text-align: center;
+    background-color: white;
+    font-size: 13px;
+    color: gray;
+}
+.massage a {
+    color:rgb(82, 70, 255);
+    background-color: white;
+    text-decoration: none;
+}
