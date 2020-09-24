@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+    <link rel="stylesheet" href="{%static 'css/content_css.css'%}">
+</head>
+
+<style>
+    .banner_img {
+        width: 100%;
+        height: 450px;
+    }
+</style>
+
+<body>
+
+    <div class="wrap">
+        <!--헤더 120px-->
+        <header>
+            <div class="top">
+                <a href="{%url 'index'%}">
+                    <img class="logo" id="logo" src={%static 'logo_change.png'%} ondragstart="return false">
+                </a>
+                <div class="top_menu">
+                    <ul>
+                        <li><a href='{%url 'hotel'%}' class="menu_link menu_link1">언택트 숙박</a></li>
+                        <li><a href='{%url 'tour'%}' class="menu_link menu_link2">언택트 관광</a></li>
+                        <li><a href='{%url 'leisure'%}' class="menu_link menu_link3">언택트 레저</a></li>
+                        <li><a href='{%url 'display'%}' class="menu_link menu_link4">언택트 전시</a></li>
+                        <li><a href='{%url 'show'%}' class="menu_link menu_link5">언택트 공연</a></li>
+                    </ul> 
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <!-- 콘텐트 시작 -->
+    <div class="content">
+        <div class="banner">
+            <img class='banner_img' src={%static 'hotel.jpg'%} ondragstart="return false">
+        </div>
+        <div class="main">
+            <div class="main_intro">
+                <p>원하는 숙소를 찾아보세요.</p>
+                <p class="main_intro_sub">▶ 프라이빗하게 호캉스를 즐겨보세요.</p>
+            </div>
+            <ul>
+                <!-- list 1 -->
+                <li class="list">
+                    <div class="list_box box1" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                    <div class="list_box box2" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                </li>
+
+                <!-- list 2 -->
+                <li class="list">
+                    <div class="list_box box3" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                    <div class="list_box box4" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                </li>
+
+                 <!-- list 3 -->
+                <li class="list">
+                    <div class="list_box box5" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                    <div class="list_box box6" style="background-image: url('../../media/tour_thum/Tour - amsterdam (Netherlands).jpg');">
+                        <div class="intro">
+
+                        </div>
+                    </div>
+                </li>
+                <li class="page">
+                    
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+        <div class="foot_div">
+            <!-- <img class="logo2" src={%static 'logo2.png'%} ondragstart="return false"> -->
+            <img class="logo_ai_school" src={%static 'logo_ai_school.png'%} ondragstart="return false">
+            <img class="logo2" src={%static 'logo2.png'%} ondragstart="return false">
+            <img class="logo_likelion" src={%static 'logo_likelion.png'%} ondragstart="return false">
+        </div>
+    </footer>
+</body>
+
+<script type="text/javascript">
+    // a 손올렸을 때 색깔 바꾸기
+    $(".menu_link1").hover(function(){
+        $(".menu_link1").css("color", "rgb(71, 65, 160)");
+        }, function(){
+        $(".menu_link1").css("color", "black");
+    });
+    $(".menu_link2").hover(function(){
+        $(".menu_link2").css("color", "rgb(71, 65, 160)");
+        }, function(){
+        $(".menu_link2").css("color", "black");
+    });
+    $(".menu_link3").hover(function(){
+        $(".menu_link3").css("color", "rgb(71, 65, 160)");
+        }, function(){
+        $(".menu_link3").css("color", "black");
+    });
+    $(".menu_link4").hover(function(){
+        $(".menu_link4").css("color", "rgb(71, 65, 160)");
+        }, function(){
+        $(".menu_link4").css("color", "black");
+    });
+    $(".menu_link5").hover(function(){
+        $(".menu_link5").css("color", "rgb(71, 65, 160)");
+        }, function(){
+        $(".menu_link5").css("color", "black");
+    });
+
+    // 썸네일 클릭했을 때 video로 이동
+    $(function(){
+        $('.box1').click(function(){
+            location.href='/video'
+        })
+    })
+    $(function(){
+        $('.box2').click(function(){
+            location.href='/video'
+        })
+    })
+    $(function(){
+        $('.box3').click(function(){
+            location.href='/video'
+        })
+    })
+    $(function(){
+        $('.box4').click(function(){
+            location.href='/video'
+        })
+    })
+    $(function(){
+        $('.box5').click(function(){
+            location.href='/video'
+        })
+    })
+    $(function(){
+        $('.box6').click(function(){
+            location.href='/video'
+        })
+    })
+</script>
+
+</html>
