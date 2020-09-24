@@ -37,3 +37,17 @@ def tour(request):
 def login(request):
     context = {'a':1}
     return render(request, 'login.html', context)
+
+def register(request):
+    context = {
+        'error': {
+            'state': False,
+            'msg': ''
+        }
+    }
+
+    if request.method == "POST":
+        user_id = request.POST['user_id']
+    
+    
+    return render(request, 'register.html', context)
