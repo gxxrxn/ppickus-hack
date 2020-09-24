@@ -23,6 +23,20 @@ header {
 header:hover{
     background-color: white;
 }
+.login_text{
+    position: absolute;
+    top: 41px;
+    right: 120px;
+    width: 43px;
+    height: 18px;
+    padding: 5px;
+    z-index: 300;
+}
+.login_text a{
+    color: rgb(83, 83, 83);
+    font-size: 15px;
+    font-weight: 600;
+}
 .top{
     width: 100%;
 }
@@ -61,11 +75,10 @@ header .menu_link{
     font-size: 19px;
 }
 
-
 /* content 시작 */
 .content{
     position: absolute;
-    top: 92px;
+    top: 91px;
     width: 100%;
 }
 .content .banner{
