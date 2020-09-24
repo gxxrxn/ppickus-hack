@@ -1,6 +1,15 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .models import Users
+from django.contrib.auth.models import User
+from django.contrib import auth
+
 # Create your views here.
+ERROR_MSG = {
+    'ID_EXIST': '이미 사용 중인 아이디 입니다.',
+    'ID_NOT_EXIST': '존재하지 않는 아이디 입니다.',
+    'PW_CHECK': '비밀번호가 일치하지 않습니다.'
+}
 
 def index(request):
     context = {'a':1}
@@ -38,7 +47,13 @@ def login(request):
     context = {'a':1}
     return render(request, 'login.html', context)
 
+def logout(request):
+    auth.logout(request)
+
+    return redirect('index')
+
 def register(request):
+
     context = {
         'error': {
             'state': False,
@@ -47,7 +62,36 @@ def register(request):
     }
 
     if request.method == "POST":
+        name = request.POST['user_name']
         user_id = request.POST['user_id']
-    
-    
+        user_pw = request.POST['user_pw']
+        user_pw_check = request.POST['user_pw_check']
+        user_email = request.POST['user_email']
+
+        user = User.objects.filter(username=user_id)
+
+        if len(user) == 0:
+            if user_pw == user_pw_check:
+                created_user = User.objects.create_user(
+                    username=user_id,
+                    password=user_pw
+                )
+
+                Users.objects.create(
+                    user_name=name,
+                    user_id=user_id,
+                    user_pw=user_pw,
+                    user_email=user_email
+                )
+
+                auth.login(request, created_user)
+
+                return redirect('index')
+            else:
+                context['error']['state'] = True
+                context['error']['msg'] = ERROR_MSG['PW_CHECK']
+        else:
+            context['error']['state'] = True
+            context['error']['msg'] = ERROR_MSG['ID_EXIST']
+
     return render(request, 'register.html', context)

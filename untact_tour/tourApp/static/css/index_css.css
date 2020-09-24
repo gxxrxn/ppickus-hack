@@ -27,12 +27,13 @@ header:hover{
     position: absolute;
     top: 41px;
     right: 150px;
-    width: 43px;
+    width: 70px;
     height: 18px;
     padding: 5px;
     z-index: 300;
     border: 2px solid #ccc;
     border-radius: 8px;
+    text-align: center;
 }
 .login_text a{
     color: #ccc;
