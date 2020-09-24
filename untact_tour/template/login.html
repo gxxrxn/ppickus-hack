@@ -10,11 +10,18 @@
 </head>
 
 <body>
+    {% if error.state %}
+        <script>
+            var msg =  "{{ error.msg }}"
+            alert(msg);
+        </script>
+    {% endif %}
+
     <div class="login-form">
-        {% csrf_token %}
         <p class="login_logo">로그인</p>
 
-        <form class="register-form" action='{% url 'login'%}'>
+        <form method='POST' class="register-form" action='{% url 'login'%}'>
+        {% csrf_token %}
             <!--  아이디 비밀번호  -->
             <div class="register-check1">
                 <input type="text" name="user_id" placeholder="아이디" required class="login-box">
