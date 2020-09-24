@@ -10,8 +10,45 @@
 
 </head>
 
+<style>
+    .passport{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 800px;
+        z-index: 500;
+    }
+    .stamp{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 450px;
+        z-index: 600;
+        animation: bounce;
+        animation-duration: 2s;
+    }
+    
+</style>
+
 <body>
     <div class="wrap">
+        {% if user.is_authenticated %}
+            <script>
+                $( document ).ready( function() {
+                    setTimeout(function() {
+                        $( 'img' ).remove( '.passport' )
+                        $( 'img' ).remove( '.stamp' )
+                    }, 3000);
+                    
+                } );
+            </script>
+
+            <img class="passport" src="{%static 'passport.png'%}" ondragstart="return false"></img>
+            <img class="stamp" src="{%static 'stamp.png'%}" ondragstart="return false"></img>
+        {% else %}
+        {% endif %}
         <!--헤더 120px-->
         <header>
 
@@ -21,6 +58,7 @@
                         alert('sucess!');
                     </script>
                     <a class="login_a" href="{%url 'logout'%}">로그아웃</a>
+                    
                 {% else %}
                     <a class="login_a" href="{%url 'login'%}">로그인</a>
                 {% endif %}
