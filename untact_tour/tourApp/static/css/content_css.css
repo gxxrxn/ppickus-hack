@@ -61,11 +61,10 @@ header .menu_link{
     font-size: 19px;
 }
 
-
 /* content 시작 */
 .content{
     position: absolute;
-    top: 92px;
+    top: 91px;
     width: 100%;
 }
 .content .banner{

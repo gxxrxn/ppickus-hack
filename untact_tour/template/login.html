@@ -11,16 +11,18 @@
 
 <body>
     <div class="login-form">
+        {% csrf_token %}
         <p class="login_logo">로그인</p>
-        <form class="register-form">
-        <!--  아이디 비밀번호  -->
-        <div class="register-check1">
-            <input type="text" placeholder="아이디" required class="login-box">
-            <input type="password" placeholder="비밀번호" class="login-box">
-        </div>
-        <!-- 로그인 박스 -->
-            <button class="register-button">로그인</button>
-            <p class="massage"> Not registered? <a href="#">Create an account</a></p>
+
+        <form class="register-form" action='{% url 'login'%}'>
+            <!--  아이디 비밀번호  -->
+            <div class="register-check1">
+                <input type="text" name="user_id" placeholder="아이디" required class="login-box">
+                <input type="password" name="user_pw" placeholder="비밀번호" class="login-box">
+            </div>
+            <!-- 로그인 박스 -->
+            <button type='submit' name='submit' class="register-button">로그인</button>
+            <p class="massage"> Not registered? <a href="{% url 'register' %}">Create an account</a></p>
         </form>
     </div>
 </body>
