@@ -48,7 +48,19 @@ def leisure(request):
     return render(request, 'leisure.html', context)
 
 def show(request):
-    context = {'a':1}
+    show_obj = Categories.objects.get(pk=5)
+    video_obj = Videos.objects.filter(pacticipate_category=show_obj).values()
+    
+    context = {}
+
+    print(video_obj[3]['video_path'])
+
+    for i in range(1, 8):
+        context[f'{i}_video_path'] = video_obj[i-1]['video_path'] + '.mp4'
+        context[f'{i}_thumb_path'] = video_obj[i-1]['thumb_path'] + '.jpg'
+        context[f'{i}_video_name'] = video_obj[i-1]['video_name']
+        context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
+
     return render(request, 'show.html', context)
 
 def video(request):
