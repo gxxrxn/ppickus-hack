@@ -85,7 +85,7 @@ def login(request):
     return render(request, 'login.html', context)
 
 def logout(request):
-    auth.logut(request)
+    auth.logout(request)
     return render(request,'index.html')
 
 def register(request):
