@@ -44,6 +44,10 @@ def tour(request):
     context = {'a':1}
     return render(request, 'tour.html', context)
 
+def mypage(request):
+    context = {'a':1}
+    return render(request, 'mypage.html', context)
+
 def login(request):
      
     context = {
