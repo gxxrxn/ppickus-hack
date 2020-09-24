@@ -3,8 +3,8 @@ from .models import Users
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import auth
-# Create your views here.
 
+# Create your views here.
 ERROR_MSG = {
     'ID_EXIST': '이미 사용 중인 아이디 입니다.',
     'ID_NOT_EXIST': '존재하지 않는 아이디 입니다.',
@@ -43,16 +43,6 @@ def video(request):
 def tour(request):
     context = {'a':1}
     return render(request, 'tour.html', context)
-
-def register(request):
-    context = {
-        'error':{
-            'state':False,
-            'msg':''
-
-        }
-    }
-    return render(request, 'register.html', context) 
 
 def login(request):
      
@@ -97,4 +87,48 @@ def login(request):
 def logout(request):
     auth.logut(request)
     return render(request,'index.html')
+
+def register(request):
+
+    context = {
+        'error': {
+            'state': False,
+            'msg': ''
+        }
+    }
+
+    if request.method == "POST":
+        name = request.POST['user_name']
+        user_id = request.POST['user_id']
+        user_pw = request.POST['user_pw']
+        user_pw_check = request.POST['user_pw_check']
+        user_email = request.POST['user_email']
+
+        user = User.objects.filter(username=user_id)
+
+        if len(user) == 0:
+            if user_pw == user_pw_check:
+                created_user = User.objects.create_user(
+                    username=user_id,
+                    password=user_pw
+                )
+
+                Users.objects.create(
+                    user_name=name,
+                    user_id=user_id,
+                    user_pw=user_pw,
+                    user_email=user_email
+                )
+
+                auth.login(request, created_user)
+
+                return redirect('index')
+            else:
+                context['error']['state'] = True
+                context['error']['msg'] = ERROR_MSG['PW_CHECK']
+        else:
+            context['error']['state'] = True
+            context['error']['msg'] = ERROR_MSG['ID_EXIST']
+
+    return render(request, 'register.html', context)
 

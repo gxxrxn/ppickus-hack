@@ -10,13 +10,21 @@
 </head>
 
 <body>
+    {% if error.state %}
+        <script>
+            var msg = "{{ error.msg }}";
+            alert(msg);
+        </script>
+    {% endif %}
+
     <div class="register_form">
         <p class="register_logo">회원가입</p>
-        <form class="register-form">
+        <form method="POST" action="{% url 'register' %}" class="register-form">
+        {% csrf_token %}
         <!--  아이디 비밀번호  -->
             <div class="register-check1">
                 <span>이름</span>
-                <input type="text" name="user_name" placeholder="이름를 입력하세요" required class="name_box"><br>
+                <input type="text" name="user_name" placeholder="이름을 입력하세요" required class="name_box"><br>
                 <span>아이디</span>
                 <input type="text" name="user_id" placeholder="아이디를 입력하세요" required class="id_box"><br>
                 <span>비밀번호</span>
@@ -27,7 +35,7 @@
                 <input type="text" name="user_email" placeholder="이메일을 입력하세요" required class="email_box"><br>
             </div>
         <!-- 로그인 박스 -->
-            <input type='submit' class="register-button" value="회원가입"></input> <!--버튼타입만들기-->
+            <button type='submit' class="register-button">회원가입</button> <!--버튼타입만들기-->
         </form>
     </div>
 </body>
