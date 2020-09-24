@@ -23,6 +23,39 @@ header {
 header:hover{
     background-color: white;
 }
+.login_text{
+    position: absolute;
+    top: 41px;
+    right: 120px;
+    width: 43px;
+    height: 18px;
+    padding: 5px;
+    z-index: 300;
+}
+.login_text a{
+    color: rgb(83, 83, 83);
+    font-size: 15px;
+    font-weight: 600;
+}
+.content .intro{
+    margin: 330px 0 0 50px;
+    width:480px; 
+    height:110px;
+    background-color: white;
+    border: 2px solid rgb(153, 153, 153);
+    border-radius: 8px;
+}
+.content .intro_text{
+    padding: 12px 0 0 10px;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+.content .intro_text2{
+    padding: 10px 0 0 10px;
+    font-size: 15px;
+    color: rgb(92, 92, 92);
+}
 .top{
     width: 100%;
 }

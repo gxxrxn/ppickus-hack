@@ -11,18 +11,20 @@
 </head>
 
 <body>
-    
     <div class="wrap">
         <!--헤더 120px-->
         <header>
 
             <div class="login_text">
                 {% if user.is_authenticated %}
+                    <script>
+                        alert('sucess!');
+                    </script>
                     <a class="login_a" href="{%url 'logout'%}">로그아웃</a>
                 {% else %}
                     <a class="login_a" href="{%url 'login'%}">로그인</a>
                 {% endif %}
-                
+
             </div>
             <div class="top">
                 <a href="{%url 'index'%}">

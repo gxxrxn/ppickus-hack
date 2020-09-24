@@ -86,6 +86,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
+
     return render(request,'index.html')
 
 def register(request):
@@ -94,6 +95,9 @@ def register(request):
         'error': {
             'state': False,
             'msg': ''
+        },
+        'success': {
+            'state': False
         }
     }
 
@@ -121,8 +125,10 @@ def register(request):
                 )
 
                 auth.login(request, created_user)
+                context['success']['state'] = True
 
                 return redirect('index')
+
             else:
                 context['error']['state'] = True
                 context['error']['msg'] = ERROR_MSG['PW_CHECK']
