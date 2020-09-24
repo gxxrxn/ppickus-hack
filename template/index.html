@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{%static 'css/index_css.css'%}">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.0.min.js" ></script>
+
+</head>
+
+<body>
+
+    <div class="wrap">
+        <!--헤더 120px-->
+        <header>
+            <div class="login_text">
+                <a class="login_a" href="{%url 'login'%}">로그인</a>
+            </div>
+            <div class="top">
+                <a href="{%url 'index'%}">
+                    <img class="logo" id="logo" src={%static 'logo.png'%} ondragstart="return false">
+                </a>
+                <div class="top_menu">
+                    <ul>
+                        <li><a href='{%url 'hotel'%}' class="menu_link menu_link1">언택트 숙박</a></li>
+                        <li><a href='{%url 'tour'%}' class="menu_link menu_link2">언택트 관광</a></li>
+                        <li><a href='{%url 'leisure'%}' class="menu_link menu_link3">언택트 레저</a></li>
+                        <li><a href='{%url 'display'%}' class="menu_link menu_link4">언택트 전시</a></li>
+                        <li><a href='{%url 'show'%}' class="menu_link menu_link5">언택트 공연</a></li>
+                    </ul> 
+                </div>
+            </div>
+            
+        </header>
+        <div class="video_area">
+            <video class='home_video' autoplay loop preload muted playsinline poster height=100%>
+                <source src="{% static 'home_video.mp4' type='video/mp4' %}">
+            </video>
+        </div>
+        
+        <div class="content">
+            <p>ENJOY !</p>
+            <p>당신이 원하는 여가를 집에서 즐겨보세요</p>
+        </div>
+        
+    </div>
+
+    <!--푸터-->
+    <footer>
+        <div class="foot_div">
+            <!-- <img class="logo2" src={%static 'logo2.png'%} ondragstart="return false"> -->
+            <img class="logo_ai_school" src={%static 'logo_ai_school.png'%} ondragstart="return false">
+            <img class="logo2" src={%static 'logo2.png'%} ondragstart="return false">
+            <img class="logo_likelion" src={%static 'logo_likelion.png'%} ondragstart="return false">
+        </div>
+    </footer>
+
+</body>
+<script type="text/javascript">
+
+    // header에 손 올렸을 때 글씨 색깔 바꾸고 로고 이미지 바꾸기
+    $("header").hover(function(){
+        $(".menu_link").css("color", "black");
+        $(".menu_link").css("text-shadow", "none");
+        $(".login_text").css("border", "2px solid black");
+        $(".login_a").css("color", "black");
+        
+        var image = document.getElementById("logo");
+        image.src = "{%static 'logo_change.png'%}"
+
+        }, function(){
+        $(".menu_link").css("color", "white");
+        $(".menu_link").css("text-shadow", "0px 0px 4px black");
+        $(".login_text").css("border", "2px solid #ccc");
+        $(".login_a").css("color", "#ccc");
+
+        var image = document.getElementById("logo");
+        image.src = "{%static 'logo.png'%}"
+    });
+
+    // a 손올렸을 때 색깔 바꾸기
+    $(".menu_link1").hover(function(){
+        $(".menu_link1").css("color", "rgb(71, 65, 160)");
+        $(".menu_link1").css("text-shadow", "none");
+        
+        }, function(){
+        $(".menu_link1").css("color", "black");
+        $(".menu_link1").css("text-shadow", "none");
+    });
+    $(".menu_link2").hover(function(){
+        $(".menu_link2").css("color", "rgb(71, 65, 160)");
+        $(".menu_link2").css("text-shadow", "none");
+        }, function(){
+        $(".menu_link2").css("color", "black");
+        $(".menu_link2").css("text-shadow", "none");
+    });
+    $(".menu_link3").hover(function(){
+        $(".menu_link3").css("color", "rgb(71, 65, 160)");
+        $(".menu_link3").css("text-shadow", "none");
+        }, function(){
+        $(".menu_link3").css("color", "black");
+        $(".menu_link3").css("text-shadow", "none");
+    });
+    $(".menu_link4").hover(function(){
+        $(".menu_link4").css("color", "rgb(71, 65, 160)");
+        $(".menu_link4").css("text-shadow", "none");
+        }, function(){
+        $(".menu_link4").css("color", "black");
+        $(".menu_link4").css("text-shadow", "none");
+    });
+    $(".menu_link5").hover(function(){
+        $(".menu_link5").css("color", "rgb(71, 65, 160)");
+        $(".menu_link5").css("text-shadow", "none");
+        }, function(){
+        $(".menu_link5").css("color", "black");
+        $(".menu_link5").css("text-shadow", "none");
+    });
+
+</script>
+
+</html>

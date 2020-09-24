@@ -1,0 +1,170 @@
+@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Nanum Gothic', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+header {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 90px;
+    /* border-bottom: 2px solid white; */
+    border-bottom: 1.7px solid rgba(138, 138, 138, 0.637);
+}
+header:hover{
+    background-color: white;
+}
+.top{
+    width: 100%;
+}
+.logo {
+    float:left;
+    margin: 28px 0 0 200px;
+    width: 150px;
+}
+.top_menu{
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 950px;
+    height: 85px;
+    margin-left:-341px;
+}
+header ul{
+    display: inline-block;
+}
+header li {
+    float: left;
+    display: block;
+    line-height: 40px;
+    width: 150px;
+    margin-top: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+}
+header li:first-child{
+    margin-left: 30px;
+}
+header .menu_link{
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    font-size: 19px;
+}
+
+
+/* content 시작 */
+.content{
+    position: absolute;
+    top: 92px;
+    width: 100%;
+}
+.content .banner{
+    margin: 0 auto;
+    width: 100%;
+    height: 450px;
+}
+.banner_img {
+    width: 100%;
+    height: 450px;
+}
+.content .main_intro {
+    padding-top: 30px;
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid rgb(224, 224, 224);
+}
+.content .main{
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 1200px;
+}
+.content .main_intro {
+    padding-top: 30px;
+    width: 100%;
+    height: 80px;
+    border-bottom: 2px solid rgb(224, 224, 224);
+}
+.content p {
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 25px;
+    line-height: 0px;
+    font-weight: 800;
+    color: rgb(66, 66, 66);
+}
+.content .main_intro_sub {
+    margin: 20px 0 0 10px;
+    padding: 0;
+    font-size: 17px;
+    line-height: 20px;
+    font-weight: 600;
+}
+.content ul{
+    margin: 0;
+    padding: 0;
+}
+.content .list{
+    padding-top: 40px;
+    width: 100%;
+    height: 490px;
+}
+.content .list:hover{
+    cursor: pointer;
+}
+.content .list_box{
+    float: left;
+    margin: 0 auto;
+    width: 574px;
+    height: 380px;
+    border-radius: 8px;
+}
+.content .list_box:last-child{
+    margin-left: 51px;
+}
+.content .intro{
+    margin: 330px 0 0 60px;
+    width:450px; 
+    height:140px;
+    background-color: white;
+}
+.content .page{
+    width:100%; 
+    height:50px;
+    background-color: teal;
+}
+
+
+/* 푸터 시작 */
+footer{
+    position: absolute;
+    top: 2314px;
+    width: 100%;
+    height: 130px;
+    background: rgb(148, 148, 148);
+}
+.foot_div{
+    margin: 0 auto;
+    width: 1100px;
+    margin-top: 38px;
+}
+footer .logo_ai_school{
+    width: 200px;
+}
+footer .logo2{
+    width: 200px;
+    margin-left: 250px;
+}
+footer .logo_likelion{
+    float: right;
+    width: 200px;
+    margin-top: 16px;
+}
