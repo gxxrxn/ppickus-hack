@@ -92,8 +92,9 @@ header .menu_link{
 }
 .content{
     position: absolute;
-    top: 75%;
-    left: 28%;
+    top: 700px;
+    /* left: 23%; */
+    left: 400px;
     transform: translate(-50%, -50%);
     z-index: 200;
     color: rgb(248, 248, 248);
@@ -113,7 +114,7 @@ header .menu_link{
 }
 footer{
     position: absolute;
-    top: 815px;
+    top: 830px;
     width: 100%;
     height: 150px;
     background: rgb(148, 148, 148);
