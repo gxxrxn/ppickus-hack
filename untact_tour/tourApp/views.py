@@ -54,7 +54,7 @@ def display(request):
         context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
 
     
-    return render(request, 'hotel.html', context)
+    return render(request, 'display.html', context)
 
 def leisure(request):
     hotel_obj = Categories.objects.get(pk=3)
@@ -90,7 +90,7 @@ def show(request):
 
 def video(request):
     context = {'a':1}
-    return render(request, 'video.html', context)
+    return render(request, 'vr.html', context)
 
 def tour(request):
     # tour에 해당하는 객체만 가져온다
@@ -108,7 +108,7 @@ def tour(request):
         context[f'{i}_video_explain'] = video_obj[i-1]['video_explain']
 
     
-    return render(request, 'hotel.html', context)
+    return render(request, 'tour.html', context)
 
 def mypage(request):
     context = {'a':1}
