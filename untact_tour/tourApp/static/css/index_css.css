@@ -85,12 +85,10 @@ header .menu_link{
 }
 .home_video {
     position:absolute;
-    top:-46px;
-    left: 60%;
-    min-width: 1570px;
+    top:-48px;
+    min-width: 100%;
     min-height: 100%;
     height: auto !important;
-    margin-left: -960px;
 }
 .content{
     position: absolute;
