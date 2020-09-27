@@ -158,6 +158,7 @@ header .menu_link{
     width: 574px;
     height: 380px;
     border-radius: 8px;
+    background-size: cover;
 }
 .content .list_box:last-child{
     margin-left: 51px;
@@ -182,7 +183,7 @@ header .menu_link{
 .content .page{
     width:100%; 
     height:50px;
-    background-color: teal;
+    display: none;
 }
 
 
